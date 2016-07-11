@@ -15,26 +15,37 @@ var ParlaModel = {
      // write your code here, but don't add any additional 
      // parameters to the the function     
        var num = 0;
+       
+       var pezzo = phrase.split(" ");
       
             
            if(language == "Italiano" ){
-               for(var j =0; j<ita.length;j++){
-                    if(phrase == ita[j]){
-                        num++;
+               for(var i=0; i<pezzo.length; i++){
+                   
+                    for(var j =0; j<ita.length;j++){
+                        if(pezzo[i] == ita[j]){
+                            num++;
+                        }
                     }
                }
            }
        if(language == "Inglese" ){
-               for(var j =0; j<eng.length;j++){
-                    if(phrase == eng[j]){
-                        num++;
+               for(var i=0; i<pezzo.length; i++){
+                   
+                    for(var j =0; j<eng.length;j++){
+                        if(pezzo[i] == eng[j]){
+                            num++;
+                        }
                     }
                }
            }
        if(language == "Spagnolo" ){
-               for(var j =0; j<spa.length;j++){
-                    if(phrase == spa[j]){
-                        num++;
+               for(var i=0; i<pezzo.length; i++){
+                   
+                    for(var j =0; j<spa.length;j++){
+                        if(pezzo[i] == spa[j]){
+                            num++;
+                        }
                     }
                }
            }
@@ -49,6 +60,8 @@ var ParlaModel = {
    detectLanguage : function (phrase) {
      // write your code here, but don't add any additional 
      // parameters to the the function     
+       
+       
    }
          
 };
@@ -65,7 +78,7 @@ $(document).ready(function(){
         var italiano = ParlaModel.getLanguageScore(parola,"Italiano");
         var inglese = ParlaModel.getLanguageScore(parola,"Inglese");
         var spagnolo = ParlaModel.getLanguageScore(parola,"Spagnolo");
-        alert(italiano);
+        //alert(italiano);
         
         if((italiano > inglese) && (italiano > spagnolo)){
             $(".lang-name").text("Italiano");
